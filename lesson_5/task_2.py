@@ -1,9 +1,11 @@
+from collections import deque
+
 # to have a dictionary of all pair hexadecimal digit => decimal number
 translator = {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6,
                '7': 7, '8': 8, '9': 9, 'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
 # to enter numbers
-first_number = list(input('Enter your first hexadecimal number: '))
-second_number = list(input('Enter your second hexadecimal number: '))
+first_number = deque(input('Enter your first hexadecimal number: '))
+second_number = deque(input('Enter your second hexadecimal number: '))
 
 # to translate those numbers to decimal by digits
 def to_decimal(hex: list):
@@ -11,10 +13,10 @@ def to_decimal(hex: list):
     # to check if negative number
     if hex[0] == '-':
         mul = -1
-        hex = hex[1:]
+        hex.popleft()
     else:
         mul = 1
-    hex_digits = [translator[hex_dig] for hex_dig in hex[::-1]]
+    hex_digits = [translator[hex_dig] for hex_dig in reversed(hex)]
     return sum([n * (16 ** i) for i, n in enumerate(hex_digits)]) * mul
 
 
@@ -34,17 +36,17 @@ def to_hex_dig(dec: int):
         dec *= -1
     else:
         mul = None
-    output = []
+    output = deque()
     while True:
         rem = dec % 16
-        output.append(tuple(translator.keys())[tuple(translator.values()).index(rem)])
+        output.appendleft(tuple(translator.keys())[tuple(translator.values()).index(rem)])
         if dec < 16:
             break
         else:
             dec = (dec - rem) / 16
     if mul is not None:
-        output.append(mul)
-    return output[::-1]
+        output.appendleft(mul)
+    return list(output)
 
 # results
 sum_hex = to_hex_dig(sum_dec)
