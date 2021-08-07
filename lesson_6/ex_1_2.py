@@ -1,6 +1,12 @@
 # MEMORY UTILIZATION OF LESSON_1/EX_8
-# the size of function leap_year is 136 bits
+"""
+# the size of function itself leap_year is 136 bits
 # the size of input_year is 28 bits, this int is referred then in function leap year
+# the size of 4, 400 and 0 is 28 bits
+# the size of boolean values True or False is 28 bits
+
+"""
+
 # function to define if leap year
 from memory_profiler import profile
 @profile(precision=5)

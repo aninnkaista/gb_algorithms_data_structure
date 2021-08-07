@@ -6,7 +6,8 @@
 - then list contains 10 strings of len 3, so each of them takes up 49+3 = 52 bits, that is total 520 bits
 - after each row is printed, variable cur_row is assigned with new empty list and filled anew, so reference for old lists
     is substituted by a new one and memory taken up by an old list should be freed;
-so at any time of function run maximum amount of memory used is 136 + 28 + 184 + 520 = 868 bits
+- the size of None is 16 bits;
+so at any time of function run maximum amount of memory used is 136 + 28 + 184 + 520 + 16 = 884 bits
 """
 def my_function():
     len_row = 10
