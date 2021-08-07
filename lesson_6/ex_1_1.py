@@ -1,4 +1,4 @@
-# MEMORY CALCULATION FOR LESSON_2/EX_5
+# MEMORY CALCULATION FOR LESSON_2/EX_5 Python 3.8.10 Architecture: x86-64
 """
 - the size of my_function is 136 bits
 - the size of len_row is 28 bit

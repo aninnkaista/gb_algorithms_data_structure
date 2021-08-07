@@ -1,4 +1,4 @@
-# MEMORY UTILIZATION OF LESSON_1/EX_8
+# MEMORY UTILIZATION OF LESSON_1/EX_8 Python 3.8.10 Architecture: x86-64
 """
 # the size of function itself leap_year is 136 bits
 # the size of input_year is 28 bits, this int is referred then in function leap year
