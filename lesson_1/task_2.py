@@ -1,4 +1,5 @@
 # function
+@profile
 def bitwise_operations(a, b):
     """Function performs bitwise operations on the given 2 numbers and
     prints results including short explanation, no return value"""
